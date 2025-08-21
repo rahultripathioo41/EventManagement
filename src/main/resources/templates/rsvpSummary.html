@@ -1,0 +1,51 @@
+<!-- src/main/resources/templates/admin/rsvpSummary.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RSVP Summary</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>RSVP Summary for Event</h2>
+
+    <!-- Event details -->
+    <div class="event-details">
+        <h3 th:text="${event.title}">Event Title</h3>
+        <p><strong>Date:</strong> <span th:text="${event.date}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${event.description}"></span></p>
+    </div>
+
+    <hr/>
+
+    <!-- RSVP summary counts -->
+    <h3>RSVP Responses</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+        <tr>
+            <th>Status</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Going</td>
+            <td th:text="${summary['Going']}">0</td>
+        </tr>
+        <tr>
+            <td>Maybe</td>
+            <td th:text="${summary['Maybe']}">0</td>
+        </tr>
+        <tr>
+            <td>Declined</td>
+            <td th:text="${summary['Decline']}">0</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br/>
+    <a th:href="@{/admin/events}" class="btn">Back to Events</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 th:text="${event.title}"></h2>
+    <p><strong>Description:</strong> <span th:text="${event.description}"></span></p>
+    <p><strong>Date:</strong> <span th:text="${event.date}"></span></p>
+    <p><strong>Start Time:</strong> <span th:text="${event.startDateTime}"></span></p>
+    <p><strong>End Time:</strong> <span th:text="${event.endDateTime}"></span></p>
+    <p><strong>Location:</strong> <span th:text="${event.location}"></span></p>
+
+    <h4>RSVP</h4>
+    <form th:action="@{/user/rsvp/save}" method="post" onsubmit="return confirmSubmit();">
+    <input type="hidden" name="eventId" th:value="${event.id}"/>
+
+    <div class="mb-3">
+        <select class="form-select" name="status" required>
+            <option value="">-- Select Status --</option>
+            <option value="Going">Going</option>
+            <option value="Maybe">Maybe</option>
+            <option value="Decline">Decline</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit RSVP</button>
+</form>
+
+<script>
+    function confirmSubmit() {
+        return confirm("Are you sure you want to submit your RSVP?");
+    }
+</script>
+
+</div>
+</body>
+</html>
