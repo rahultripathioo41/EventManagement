@@ -3,6 +3,8 @@ Event Management System
 
 The Event Management System is a web-based application built using Spring Boot + Thymeleaf that allows efficient management of events, participants, and administrative tasks. It provides separate functionalities for Admin and Users, ensuring a smooth and role-based event management process.
 
+"sample video link": https://drive.google.com/file/d/1Vpc0D-ggfCEpZxMQis2nXV9ldKunzO39/view?usp=sharing
+
 ✨ Features
 👨‍💼 Admin Features
 
@@ -47,3 +49,5 @@ AJAX integration for smooth user experience (e.g., form submissions without page
 Admin-only access to analytics and event summary
 
 Mobile-responsive UI using Bootstrap
+
+
